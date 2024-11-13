@@ -7,14 +7,14 @@ public class Main {
         Scanner input = new Scanner(System.in);
                 System.out.println("A continuación se le solicitará introducir dos carácteres para generar su tablero personalizado");
                 input.nextLine();
-        int primerPatron = 0;
-        int segundoPatron = 0;
+        int patronUsuario = 0;
+        int tamañoPatron = 0;
 
-        while (primerPatron < 1 || primerPatron > 9) {
+        while (patronUsuario < 1 || patronUsuario > 9) {
             System.out.println("Introduzca el primer carácter para establecer un patrón");
             if (input.hasNextInt()) {
-                primerPatron = input.nextInt();
-                if (primerPatron < 1 || primerPatron > 9) {
+                patronUsuario = input.nextInt();
+                if (patronUsuario < 1 || patronUsuario > 9) {
                     System.out.println("Has escogido un numero incorrecto.\nPor favor vuelve a introducir un numero del 1-9");
                 break; /* pendiente crear el segundo patron y solucionar bucle */
                 }
