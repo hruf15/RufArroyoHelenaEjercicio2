@@ -5,24 +5,32 @@ public class Main {
 
         System.out.println("Bienvenido al juego del Ajedrez");
         Scanner input = new Scanner(System.in);
-                System.out.println("A continuación se le solicitará introducir dos carácteres para generar su tablero personalizado");
-                input.nextLine();
-        int patronUsuario = 0;
+        System.out.println("¡Vamos a generar su tablero personalizado!\nPulse enter para continuar");
+        input.nextLine();
+
         int tamañoPatron = 0;
 
-        while (patronUsuario < 1 || patronUsuario > 9) {
-            System.out.println("Introduzca el primer carácter para establecer un patrón");
+        while (tamañoPatron < 1 || tamañoPatron > 15) {
+            System.out.println("Introduzca un numero entre 1-15 para el crear el tamaño del tablero personalizado");
+
             if (input.hasNextInt()) {
-                patronUsuario = input.nextInt();
-                if (patronUsuario < 1 || patronUsuario > 9) {
-                    System.out.println("Has escogido un numero incorrecto.\nPor favor vuelve a introducir un numero del 1-9");
-                break; /* pendiente crear el segundo patron y solucionar bucle */
+                tamañoPatron = input.nextInt();
+                if (tamañoPatron >= 1 && tamañoPatron <= 15) {
+                    System.out.println("El tamaño escogido es " + tamañoPatron);
+                } else {
+                    System.out.println("El numero escogido no es válido");
                 }
+            } else {
+                System.out.println("Ha introducido un numero/carácter inválido.\nPor favor vuelva a introducir un numero del 1-15");
+                input.next();
             }
         }
+
+        int patronUsuario = 0;
+
+
     }
 }
-
 /* En el mercado de construir tableros de ajedrez, es aún mejor si permites que las personas personalicen
 sus tableros. Por ejemplo, en lugar de tener cuadrados negros sólidos, puedes ofrecer la posibilidad de
 imprimir cualquier patrón como una letra, un número o incluso un símbolo. Otra característica podría ser
