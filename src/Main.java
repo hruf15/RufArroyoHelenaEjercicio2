@@ -15,6 +15,7 @@ public class Main {
 
             if (input.hasNextInt()) {
                 tamañoPatron = input.nextInt();
+                input.nextLine();
                 if (tamañoPatron >= 1 && tamañoPatron <= 15) {
                     System.out.println("El tamaño escogido es " + tamañoPatron);
                 } else {
@@ -26,11 +27,21 @@ public class Main {
             }
         }
 
-        int patronUsuario = 0;
+        System.out.println("Por último debe introducir el patrón para su tablero");
+            String patronUsuario = input.nextLine();
+            System.out.println("El Patrón escogido es " + patronUsuario);
+            System.out.println();
 
+        System.out.println("¡AQUI TIENE SU TABLERO!");
+        for (int i = 0; i < tamañoPatron; i++) {
+            for (int j = 0; j < tamañoPatron; j++) {
+                System.out.print(patronUsuario + " ");
+            }
+            System.out.println();
+        }
 
+        }
     }
-}
 /* En el mercado de construir tableros de ajedrez, es aún mejor si permites que las personas personalicen
 sus tableros. Por ejemplo, en lugar de tener cuadrados negros sólidos, puedes ofrecer la posibilidad de
 imprimir cualquier patrón como una letra, un número o incluso un símbolo. Otra característica podría ser
